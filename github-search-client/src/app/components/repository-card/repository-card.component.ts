@@ -11,7 +11,7 @@ import { GithubService } from '../../services/github.service';
 })
 export class RepositoryCardComponent {
   @Input() repository!: Repository;
-  @Input() isFavorite: boolean = false; // TODO
+  @Input() isFavorite: boolean = false;
   @Input() isLoading: boolean = false;
   @Output() actionClick = new EventEmitter<Repository>();
 

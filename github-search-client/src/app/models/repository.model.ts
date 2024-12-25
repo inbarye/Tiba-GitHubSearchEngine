@@ -5,5 +5,4 @@ export interface Repository {
     description: string | null;
     stars: number;
     language?: string;
-    isFavorite?: boolean; // TODO: ? 
   }
