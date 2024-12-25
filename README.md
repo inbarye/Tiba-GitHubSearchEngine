@@ -24,13 +24,12 @@ Frontend: Angular 18, TypeScript
 Backend: .NET Core, Entity Framework, SQLite
 Authentication: JWT
 
-# Notes
+### Notes
 
-- I used SQLite instead of SQL Server for easier development.
+* I used SQLite instead of SQL Server for easier development.
 
-- The next steps I would take are:
-
-* make sure no warnings
-* currently default number of results in search result, would add pagination & Show the total count of matching repositories
-* prettier toasts in the client
-* toggle add/remove favorites in search results + favorites list
+* The next steps I would take are:
+    - make sure no warnings
+    - currently default number of results in search result, would add pagination & Show the total count of matching repositories
+    - prettier toasts in the client
+    - toggle add/remove favorites in search results + favorites list
