@@ -1,0 +1,20 @@
+<div class="repo-item">
+  <div class="repo-info">
+    <h3>{{repository.name}}</h3>
+    <p>{{repository.description}}</p>
+    <div class="repo-stats">
+      <span>⭐ {{repository.stars}}</span>
+    </div>
+  </div>
+  <div class="repo-actions">
+    <a [href]="repository.url" target="_blank" class="btn-link">
+      View on GitHub
+    </a>
+    <button 
+      [class]="isFavorite ? 'btn-remove' : 'btn-favorite'" 
+      (click)="onActionClick()" 
+      [disabled]="isLoading">
+      {{getActionButtonText()}}
+    </button>
+  </div>
+</div>

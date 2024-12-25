@@ -1,0 +1,37 @@
+<div class="search-container">
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search GitHub repositories..." class="search-input"
+      [disabled]="isLoading" (keyup.enter)="onSearch()">
+    <button (click)="onSearch()" class="search-button" [disabled]="isLoading || searchQuery.length < 2">
+      {{ isLoading ? 'Searching...' : 'Search' }}
+    </button>
+  </div>
+
+  @if (isLoading) {
+  <div class="loading-state">
+    <p>Searching repositories...</p>
+  </div>
+  }
+
+  @if (error) {
+  <div class="error-state">
+    <p>{{error}}</p>
+  </div>
+  }
+
+  @if (!isLoading && !error && repositories.length) {
+  <div class="results">
+    @for (repo of repositories; track repo.id) {
+      <app-repository-card [repository]="repo" [isLoading]="isSaving" [isFavorite]="false"
+      (actionClick)="addToFavorites($event)">
+    </app-repository-card>
+    }
+  </div>
+  }
+
+  @if (!isLoading && hasSearched && searchQuery && !repositories.length) {
+  <div class="no-results">
+    <p>No repositories found matching your search.</p>
+  </div>
+  }
+</div>

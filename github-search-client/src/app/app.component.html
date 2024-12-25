@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <h1>GitHub Search</h1>
+        <div class="nav-links">
+            @if (isLoggedIn$ | async) {
+            <a routerLink="/search" routerLinkActive="active">Search</a>
+            <a routerLink="/favorites" routerLinkActive="active">Favorites</a>
+            <a href="#" (click)="logout($event)">Logout</a>
+            }
+            @else {
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+            <a routerLink="/signup" routerLinkActive="active">Signup</a>
+
+            }
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

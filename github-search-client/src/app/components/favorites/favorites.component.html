@@ -1,0 +1,31 @@
+<div class="favorites-container">
+    <h2>My Favorite Repositories</h2>
+
+    @if (isLoading) {
+    <div class="loading-state">
+        <p>Loading favorites...</p>
+    </div>
+    }
+
+    @if (error) {
+    <div class="error-state">
+        <p>{{error}}</p>
+    </div>
+    }
+
+    @if (!isLoading && !error && favorites.length) {
+    <div class="favorites-list">
+        @for (repo of favorites; track repo.id) {
+        <app-repository-card [repository]="repo" [isLoading]="isRemoving" [isFavorite]="true"
+            (actionClick)="removeFromFavorites(repo)">
+        </app-repository-card>
+        }
+    </div>
+    }
+
+    @if(!isLoading && !error && !favorites.length){
+    <div class="no-favorites">
+        <p>You haven't added any favorites yet. Go to search to add some!</p>
+    </div>
+    }
+</div>

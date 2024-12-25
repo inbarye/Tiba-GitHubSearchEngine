@@ -1,0 +1,37 @@
+.navbar {
+    background-color: #24292e;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      border-radius: 4px;
+  
+      &:hover {
+        background-color: #404448;
+      }
+  
+      &.active {
+        background-color: #404448;
+      }
+    }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
